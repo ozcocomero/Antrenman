@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Nabız kaynağı seçimi</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#0B0E12}
+</style>
+</helmet>
+<div style="width: 800px; height: 480px; box-sizing: border-box; padding: 18px 20px; background: #0B0E12; color: #E8ECF1; font-family: 'IBM Plex Sans', system-ui, sans-serif; display: flex; flex-direction: column; gap: 14px">
+
+<div style="height: 48px; display: flex; align-items: center; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; line-height: 1">Nabız kaynağını seç</div>
+<div style="font-size: 14px; color: #9AA4B0">Bluetooth ile yayın yapan cihazlar aranıyor</div>
+</div>
+<button style="height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #2A313B; background: #161B22; color: #E8ECF1; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8ECF1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+Yeniden tara</button>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="height: 72px; background: #12161C; border-radius: 14px; border: 2px solid #4CC07F; padding: 0 18px; display: flex; align-items: center; gap: 16px; box-sizing: border-box">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4CC07F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 18px; font-weight: 600">Suunto Smart Sensor</div>
+<div style="font-size: 14px; color: #9AA4B0">Göğüs bandı · sinyal güçlü · 84 bpm</div>
+</div>
+<div style="font-size: 14px; font-weight: 600; color: #4CC07F">Önerilen</div>
+<button style="height: 48px; padding: 0 22px; border-radius: 10px; border: 0; background: #4CC07F; color: #0B0E12; font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; font-weight: 600">Bağlan</button>
+</div>
+
+<div style="height: 72px; background: #12161C; border-radius: 14px; border: 2px solid #12161C; padding: 0 18px; display: flex; align-items: center; gap: 16px; box-sizing: border-box">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#9AA4B0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"></circle><polyline points="12 9 12 12 13.5 13.5"></polyline><path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"></path></svg>
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 18px; font-weight: 600">Garmin [saat modeli]</div>
+<div style="font-size: 14px; color: #9AA4B0">Bilek · nabız yayını açık · 86 bpm</div>
+</div>
+<button style="height: 48px; padding: 0 22px; border-radius: 10px; border: 1px solid #2A313B; background: #161B22; color: #E8ECF1; font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; font-weight: 600">Bağlan</button>
+</div>
+
+<div style="height: 72px; background: #12161C; border-radius: 14px; border: 2px solid #12161C; padding: 0 18px; display: flex; align-items: center; gap: 16px; box-sizing: border-box">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#9AA4B0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"></circle><polyline points="12 9 12 12 13.5 13.5"></polyline><path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"></path></svg>
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 18px; font-weight: 600">Suunto [saat modeli]</div>
+<div style="font-size: 14px; color: #9AA4B0">Bilek · nabız yayını açık · 85 bpm</div>
+</div>
+<button style="height: 48px; padding: 0 22px; border-radius: 10px; border: 1px solid #2A313B; background: #161B22; color: #E8ECF1; font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; font-weight: 600">Bağlan</button>
+</div>
+</div>
+
+<div style="flex-grow: 1; display: flex; gap: 12px">
+<div style="flex-grow: 1; background: #12161C; border-radius: 14px; padding: 14px 18px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: #9AA4B0">SAATİN LİSTEDE YOK MU?</div>
+<div style="font-size: 15px; line-height: 1.45; color: #C3CAD3">Saatinde nabız yayınını (heart rate broadcast) aç, ekranı açık tut ve yeniden tara.</div>
+</div>
+<div style="width: 250px; background: #12161C; border-radius: 14px; padding: 14px 18px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: #9AA4B0">ORTAM SENSÖRÜ</div>
+<div style="display: flex; align-items: center; gap: 8px">
+<div style="width: 10px; height: 10px; border-radius: 5px; background: #4CC07F"></div>
+<div style="font-size: 16px; font-weight: 600">Sense HAT hazır</div>
+</div>
+<div style="font-size: 14px; color: #9AA4B0">24,5 °C · %58 nem</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":800,"height":480}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

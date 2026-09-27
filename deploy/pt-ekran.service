@@ -1,0 +1,21 @@
+[Unit]
+Description=PT Ekran backend
+After=network-online.target bluetooth.target
+Wants=network-online.target bluetooth.target
+
+[Service]
+# REPLACE_USER is filled in by deploy/setup-pi.sh and deploy/deploy.sh
+User=REPLACE_USER
+SupplementaryGroups=bluetooth i2c
+WorkingDirectory=/opt/pt-ekran
+Environment=PYTHONUNBUFFERED=1
+# Uncomment to open the device UI to the LAN for debugging (http://<pi>:8080/?dev)
+#Environment=PT_REMOTE_UI=1
+ExecStart=/opt/pt-ekran/.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8080 --no-access-log
+Restart=on-failure
+RestartSec=3
+# Give the app time to flush the running session on stop
+TimeoutStopSec=15
+
+[Install]
+WantedBy=multi-user.target

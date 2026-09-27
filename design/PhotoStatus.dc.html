@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Fotoğraf: alım ve hata durumları</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#0B0E12}
+</style>
+</helmet>
+<div style="width: 800px; height: 480px; box-sizing: border-box; padding: 18px 20px; background: #0B0E12; color: #E8ECF1; font-family: 'IBM Plex Sans', system-ui, sans-serif; display: flex; flex-direction: column; gap: 14px; position: relative; overflow: hidden">
+<div style="height: 48px; display: flex; align-items: center; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 3px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; line-height: 1">Profil fotoğrafı</div>
+<div style="font-size: 14px; color: #9AA4B0">İzzet</div>
+</div>
+<div style="display: flex; gap: 10px"><button style="height: 48px; padding: 0 18px; border-radius: 10px; border: 1px solid #2A313B; background: #161B22; color: #E8ECF1; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 600">İptal</button></div>
+</div>
+<div style="background: #12161C; border-radius: 14px; height: 382px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 0 60px; text-align: center">
+<sc-if value="{{rec}}" hint-placeholder-val="{{ true }}">
+<svg width="84" height="84" viewBox="0 0 84 84"><circle cx="42" cy="42" r="36" fill="none" stroke="#232A33" stroke-width="7"></circle><circle cx="42" cy="42" r="36" fill="none" stroke="#5AA0E0" stroke-width="7" stroke-linecap="round" stroke-dasharray="140 226" transform="rotate(-90 42 42)"></circle></svg>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; line-height: 1">Fotoğraf alınıyor</div>
+<div style="font-size: 16px; color: #C3CAD3">[Telefon modeli] gönderiyor · %62</div>
+<div style="font-size: 14px; color: #9AA4B0">Telefondaki sayfayı kapatma</div>
+</sc-if>
+<sc-if value="{{exp}}" hint-placeholder-val="{{ false }}">
+<svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#F59A3C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; line-height: 1">Kodun süresi doldu</div>
+<div style="font-size: 16px; color: #C3CAD3">Güvenlik için her kod 5 dakika ve tek yükleme için geçerli.</div>
+<div style="display: flex; gap: 10px"><button style="height: 48px; padding: 0 18px; border-radius: 10px; border: 1px solid #2A313B; background: #161B22; color: #E8ECF1; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 600">İptal</button><a href="Photo.dc.html" style="height: 48px; padding: 0 22px; border-radius: 10px; border: 0; background: #4CC07F; color: #0B0E12; font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; font-weight: 600; display: flex; align-items: center; text-decoration: none">Yeni kod</a></div>
+</sc-if>
+<sc-if value="{{bad}}" hint-placeholder-val="{{ false }}">
+<svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#F0605A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; line-height: 1">Fotoğraf açılamadı</div>
+<div style="font-size: 16px; color: #C3CAD3">Dosya bozuk, çok büyük ya da desteklenmeyen bir biçimde. Mevcut fotoğraf değişmedi.</div>
+<div style="display: flex; gap: 10px"><button style="height: 48px; padding: 0 18px; border-radius: 10px; border: 1px solid #2A313B; background: #161B22; color: #E8ECF1; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 600">İptal</button><a href="Photo.dc.html" style="height: 48px; padding: 0 22px; border-radius: 10px; border: 0; background: #4CC07F; color: #0B0E12; font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; font-weight: 600; display: flex; align-items: center; text-decoration: none">Tekrar dene</a></div>
+</sc-if>
+<sc-if value="{{late}}" hint-placeholder-val="{{ false }}">
+<svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#9AA4B0" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><line x1="5" y1="5" x2="19" y2="19"></line></svg>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; line-height: 1">Yükleme iptal edildi</div>
+<div style="font-size: 16px; color: #C3CAD3">İptalden sonra gelen fotoğraflar kabul edilmez; telefonda “Bağlantı geçersiz” görünür.</div>
+</sc-if>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"state":{"editor":"enum","options":["alınıyor","süre doldu","okunamadı","iptal sonrası"],"default":"alınıyor"},"$preview":{"width":800,"height":480}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.props.state ?? 'alınıyor';
+    return { rec: st === 'alınıyor', exp: st === 'süre doldu', bad: st === 'okunamadı', late: st === 'iptal sonrası' };
+  }
+}
+</script>
+</body>
+</html>

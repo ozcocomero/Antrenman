@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Profil düzenleme</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#0B0E12}
+</style>
+</helmet>
+<div style="width: 800px; height: 480px; box-sizing: border-box; padding: 18px 20px; background: #0B0E12; color: #E8ECF1; font-family: 'IBM Plex Sans', system-ui, sans-serif; display: flex; flex-direction: column; gap: 14px">
+<div style="height: 48px; display: flex; align-items: center; justify-content: space-between">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700">Profil</div>
+<div style="display: flex; gap: 10px">
+<button style="height: 44px; padding: 0 16px; border-radius: 10px; border: 1px solid #5A2A28; background: #161B22; color: #F0908A; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 600">Sil</button>
+<button style="height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #2A313B; background: #161B22; color: #E8ECF1; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 600">Geri</button>
+<button style="height: 44px; padding: 0 22px; border-radius: 10px; border: 0; background: #4CC07F; color: #0B0E12; font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; font-weight: 600">Kaydet</button>
+</div>
+</div>
+<div style="display: flex; gap: 12px; height: 382px">
+<div style="width: 230px; background: #12161C; border-radius: 14px; padding: 18px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+<svg width="164" height="164" viewBox="0 0 164 164">
+<circle cx="82" cy="82" r="78" fill="none" stroke="#4CC07F" stroke-width="4"></circle>
+<circle cx="82" cy="82" r="68" fill="#2A313B"></circle>
+<text x="82" y="104" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="62" font-weight="700" fill="#E8ECF1">İ</text>
+</svg>
+<div style="font-size: 12px; color: #9AA4B0; margin-top: -6px">[profil fotoğrafı]</div>
+<button style="height: 48px; width: 100%; border-radius: 10px; border: 1px solid #2A313B; background: #161B22; color: #E8ECF1; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8ECF1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+Fotoğraf değiştir</button>
+</div>
+<div style="flex-grow: 1; background: #12161C; border-radius: 14px; padding: 12px 18px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: center; gap: 12px; height: 56px">
+<label for="ad" style="width: 70px; font-size: 15px; font-weight: 600; color: #9AA4B0">Ad</label>
+<input id="ad" value="İzzet" style="flex-grow: 1; height: 50px; box-sizing: border-box; border-radius: 10px; border: 1px solid #2A313B; background: #0B0E12; color: #E8ECF1; font-family: 'IBM Plex Sans', sans-serif; font-size: 20px; padding: 0 14px">
+</div>
+<div style="height: 56px; display: flex; align-items: center; gap: 12px">
+<div style="width: 70px; font-size: 15px; font-weight: 600; color: #9AA4B0">Yaş</div>
+<button aria-label="Yaş azalt" onClick="{{ageDown}}" style="width: 52px; height: 52px; border-radius: 12px; border: 1px solid #2A313B; background: #161B22; color: #E8ECF1; font-size: 26px; font-weight: 600">−</button>
+<div style="width: 110px; text-align: center; display: flex; align-items: baseline; justify-content: center; gap: 6px"><span style="font-family: 'Barlow Condensed', sans-serif; font-size: 42px; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums">{{age}}</span><span style="font-size: 14px; color: #9AA4B0">yaş</span></div>
+<button aria-label="Yaş artır" onClick="{{ageUp}}" style="width: 52px; height: 52px; border-radius: 12px; border: 1px solid #2A313B; background: #161B22; color: #E8ECF1; font-size: 26px; font-weight: 600">+</button>
+</div>
+<div style="height: 56px; display: flex; align-items: center; gap: 12px">
+<div style="width: 70px; font-size: 15px; font-weight: 600; color: #9AA4B0">Boy</div>
+<button aria-label="Boy azalt" onClick="{{heightDown}}" style="width: 52px; height: 52px; border-radius: 12px; border: 1px solid #2A313B; background: #161B22; color: #E8ECF1; font-size: 26px; font-weight: 600">−</button>
+<div style="width: 110px; text-align: center; display: flex; align-items: baseline; justify-content: center; gap: 6px"><span style="font-family: 'Barlow Condensed', sans-serif; font-size: 42px; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums">{{height}}</span><span style="font-size: 14px; color: #9AA4B0">cm</span></div>
+<button aria-label="Boy artır" onClick="{{heightUp}}" style="width: 52px; height: 52px; border-radius: 12px; border: 1px solid #2A313B; background: #161B22; color: #E8ECF1; font-size: 26px; font-weight: 600">+</button>
+</div>
+<div style="height: 56px; display: flex; align-items: center; gap: 12px">
+<div style="width: 70px; font-size: 15px; font-weight: 600; color: #9AA4B0">Kilo</div>
+<button aria-label="Kilo azalt" onClick="{{weightDown}}" style="width: 52px; height: 52px; border-radius: 12px; border: 1px solid #2A313B; background: #161B22; color: #E8ECF1; font-size: 26px; font-weight: 600">−</button>
+<div style="width: 110px; text-align: center; display: flex; align-items: baseline; justify-content: center; gap: 6px"><span style="font-family: 'Barlow Condensed', sans-serif; font-size: 42px; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums">{{weight}}</span><span style="font-size: 14px; color: #9AA4B0">kg</span></div>
+<button aria-label="Kilo artır" onClick="{{weightUp}}" style="width: 52px; height: 52px; border-radius: 12px; border: 1px solid #2A313B; background: #161B22; color: #E8ECF1; font-size: 26px; font-weight: 600">+</button>
+</div>
+
+<div style="margin-top: auto; height: 60px; border-radius: 10px; background: #0B0E12; display: flex; align-items: center; justify-content: space-between; padding: 0 16px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 13px; color: #9AA4B0">Yaşa göre maks. nabız</div>
+<div style="font-size: 12px; color: #6B7480">208 − 0,7 × yaş · Garmin bağlıysa onunki geçerli</div>
+</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-size: 34px; font-weight: 700; color: #F0605A">{{maxHr}} <span style="font-size: 18px; color: #9AA4B0">bpm</span></div>
+</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":800,"height":480}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { age: 45, height: 178, weight: 80 };
+  }
+  renderVals() {
+    const { age, height, weight } = this.state;
+    const step = (k, d, lo, hi) => () => this.setState({ [k]: Math.max(lo, Math.min(hi, this.state[k] + d)) });
+    return {
+      age, height, weight,
+      maxHr: Math.round(208 - 0.7 * age),
+      ageUp: step('age', 1, 10, 99), ageDown: step('age', -1, 10, 99),
+      heightUp: step('height', 1, 120, 220), heightDown: step('height', -1, 120, 220),
+      weightUp: step('weight', 1, 30, 200), weightDown: step('weight', -1, 30, 200)
+    };
+  }
+}
+</script>
+</body>
+</html>

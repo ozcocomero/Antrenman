@@ -1,0 +1,6 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+bleak>=0.22
+pillow>=10.0
+qrcode>=7.4
+garminconnect>=0.2.19

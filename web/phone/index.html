@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#0B0E12">
+<title>PT Ekran · Profil fotoğrafı</title>
+<link rel="stylesheet" href="/static/shared/base.css">
+<style>
+body{min-height:100vh}
+main{max-width:430px;margin:0 auto;min-height:100vh;padding:24px 22px;display:flex;flex-direction:column;gap:14px}
+.brand{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--muted)}
+h1{font-family:var(--cond);font-size:36px;font-weight:700;line-height:1.05;margin:0}
+.btn{height:56px;width:100%;border-radius:14px;font-size:17px}
+label.btn{display:flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--line);background:var(--btn);font-weight:600;cursor:pointer}
+label.btn.primary{background:var(--green);color:var(--bg);border:0}
+input[type=file]{display:none}
+.center{flex-grow:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center}
+.center p{font-size:16px;line-height:1.5;color:var(--soft);margin:0}
+#crop{width:100%;aspect-ratio:1;border-radius:16px;display:block}
+.bottom{margin-top:auto;display:flex;flex-direction:column;gap:10px}
+.progress{height:8px;border-radius:4px;background:var(--track);overflow:hidden}
+.progress div{height:8px;background:var(--blue);width:0}
+</style>
+</head>
+<body>
+<main id="m"></main>
+<script type="module" src="/static/phone/phone.js"></script>
+</body>
+</html>

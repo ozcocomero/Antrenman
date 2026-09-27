@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Canlı antrenman ekranı</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#0B0E12}
+@keyframes hb{0%,100%{transform:scale(1)}12%{transform:scale(1.22)}24%{transform:scale(1)}36%{transform:scale(1.1)}50%{transform:scale(1)}}
+</style>
+</helmet>
+<div style="width: 800px; height: 480px; box-sizing: border-box; padding: 16px 20px 18px; background: #0B0E12; color: #E8ECF1; font-family: 'IBM Plex Sans', system-ui, sans-serif; display: flex; flex-direction: column; gap: 12px; position: relative; overflow: hidden">
+
+<div style="height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<div style="display: flex; align-items: center; gap: 10px">
+<div style="width: 10px; height: 10px; border-radius: 5px; background: {{linkColor}}"></div>
+<div style="font-size: 16px; font-weight: 500">Suunto Smart Sensor</div>
+<div style="font-size: 14px; color: #9AA4B0">{{linkText}}</div>
+</div>
+<div style="display: flex; align-items: center; gap: 18px">
+<div style="display: flex; align-items: center; gap: 6px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9AA4B0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 600">24,5 °C</div>
+</div>
+<div style="display: flex; align-items: center; gap: 6px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9AA4B0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 600">%58 nem</div>
+</div>
+<button aria-label="Duraklat" style="width: 48px; height: 44px; border-radius: 10px; border: 1px solid #2A313B; background: #161B22; display: flex; align-items: center; justify-content: center; padding: 0">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8ECF1" stroke-width="2.2" stroke-linecap="round"><line x1="8" y1="5" x2="8" y2="19"></line><line x1="16" y1="5" x2="16" y2="19"></line></svg>
+</button>
+<button style="height: 44px; padding: 0 16px; border-radius: 10px; border: 1px solid #2A313B; background: #161B22; color: #E8ECF1; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 600">Bitir</button>
+</div>
+</div>
+
+<div style="display: flex; gap: 12px; height: 246px">
+<div style="flex-grow: 1; background: #12161C; border-radius: 16px; padding: 14px 18px 14px 22px; display: flex; gap: 12px">
+<div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between">
+<div style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; color: #9AA4B0">NABIZ</div>
+<div style="display: flex; align-items: flex-end; gap: 8px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-size: 160px; font-weight: 700; line-height: 0.85; color: {{zoneColor}}; font-variant-numeric: tabular-nums">{{hr}}</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding-bottom: 4px">
+<svg viewBox="0 0 24 24" style="width: 42px; height: 42px; animation: {{beatAnim}}; transform-origin: 50% 55%"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 2.8 4.5 6.4 4.1c2.1-.2 3.9 1 5.6 3 1.7-2 3.5-3.2 5.6-3 3.6.4 5.5 4.2 4 7.6C19.5 16.4 12 21 12 21z" fill="{{zoneColor}}"></path></svg>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 600; line-height: 1; color: #9AA4B0">bpm</div>
+</div>
+</div>
+<div style="display: flex; gap: 16px; font-size: 14px; color: #C3CAD3">
+<div><span style="font-weight: 600; color: #E8ECF1">%{{pct}}</span> maks.</div>
+<div>Ort. <span style="font-weight: 600; color: #E8ECF1">131</span></div>
+<div>Tepe <span style="font-weight: 600; color: #E8ECF1">171</span></div>
+</div>
+</div>
+<div style="width: 112px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px">
+<svg width="108" height="108" viewBox="0 0 108 108">
+<circle cx="54" cy="54" r="50" fill="none" stroke="#232A33" stroke-width="6"></circle>
+<circle cx="54" cy="54" r="50" fill="none" stroke="{{zoneColor}}" stroke-width="6" stroke-linecap="round" stroke-dasharray="{{ringDash}}" transform="rotate(-90 54 54)"></circle>
+<circle cx="54" cy="54" r="42" fill="#2A313B"></circle>
+<text x="54" y="67" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="38" font-weight="700" fill="#E8ECF1">İ</text>
+</svg>
+<div style="font-size: 16px; font-weight: 600">İzzet</div>
+<div style="font-size: 12px; color: #9AA4B0; margin-top: -4px">[profil fotoğrafı]</div>
+</div>
+</div>
+<div style="width: 290px; display: flex; flex-direction: column; gap: 12px">
+<div style="flex-grow: 1; background: #12161C; border-radius: 16px; border-top: 6px solid {{zoneColor}}; padding: 12px 20px; display: flex; flex-direction: column; justify-content: center; gap: 2px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-size: 58px; font-weight: 700; line-height: 1; color: {{zoneColor}}">ZONE {{zone}}</div>
+<div style="font-size: 22px; font-weight: 600">{{zoneName}}</div>
+<div style="font-size: 15px; color: #9AA4B0">{{zoneRange}} bpm</div>
+</div>
+<div style="height: 88px; background: #12161C; border-radius: 16px; padding: 10px 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center">
+<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: #9AA4B0">SÜRE</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-size: 50px; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums">32:14</div>
+</div>
+</div>
+</div>
+
+<div style="flex-grow: 1; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px">
+<sc-for list="{{zones}}" as="z" hint-placeholder-count="5">
+<div style="background: #12161C; border-radius: 12px; border: 2px solid {{z.border}}; padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between">
+<div style="display: flex; justify-content: space-between; align-items: baseline">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; color: {{z.color}}">Z{{z.n}}</div>
+<div style="font-size: 12px; color: #9AA4B0">{{z.name}}</div>
+</div>
+<div style="height: 8px; border-radius: 4px; background: #232A33; overflow: hidden">
+<div style="height: 8px; border-radius: 4px; width: {{z.w}}; background: {{z.color}}"></div>
+</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-size: 30px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums">{{z.t}}</div>
+</div>
+</sc-for>
+</div>
+
+<sc-if value="{{lost}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; left: 20px; right: 20px; top: 68px; height: 52px; border-radius: 12px; background: #3A2A10; border: 1px solid #F59A3C; display: flex; align-items: center; gap: 12px; padding: 0 18px; box-sizing: border-box">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F59A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+<div style="font-size: 16px; font-weight: 600; color: #FFD9A8">Nabız sinyali kesildi · son değer 12 sn önce · yeniden bağlanıyor</div>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"zone":{"editor":"enum","options":["1","2","3","4","5"],"default":"3"},"lost":{"editor":"boolean","default":false},"$preview":{"width":800,"height":480}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const zone = parseInt(this.props.zone ?? '3', 10) || 3;
+    const lost = !!(this.props.lost ?? false);
+    const colors = ['#A8B0BA', '#5AA0E0', '#4CC07F', '#F59A3C', '#F0605A'];
+    const names = ['Isınma', 'Kolay', 'Aerobik', 'Eşik', 'Maksimum'];
+    const ranges = ['89–106', '106–124', '124–142', '142–159', '159–177'];
+    const hrs = [100, 116, 135, 150, 166];
+    const times = ['04:10', '09:32', '12:48', '05:04', '00:40'];
+    const widths = ['33%', '74%', '100%', '40%', '5%'];
+    const zones = colors.map((c, i) => ({
+      n: i + 1, color: c, name: names[i], t: times[i], w: widths[i],
+      border: i + 1 === zone ? c : '#12161C'
+    }));
+    const hr = hrs[zone - 1];
+    return {
+      zone, zones, hr,
+      pct: Math.round(hr / 177 * 100),
+      ringDash: (hr / 177 * 314.2).toFixed(1) + ' 314.2',
+      beatAnim: lost ? 'none' : 'hb ' + (60 / hr).toFixed(2) + 's ease-in-out infinite',
+      zoneColor: lost ? '#6B7480' : colors[zone - 1],
+      zoneName: names[zone - 1],
+      zoneRange: ranges[zone - 1],
+      lost,
+      linkColor: lost ? '#F59A3C' : '#4CC07F',
+      linkText: lost ? 'Sinyal yok' : 'Bağlı · pil %80'
+    };
+  }
+}
+</script>
+</body>
+</html>
